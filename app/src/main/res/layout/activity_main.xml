@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/filled"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/filled" />
+
+    <LinearLayout
+        android:id="@+id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slide_instructions"/>
+
+        <View android:layout_width="@dimen/zero" android:layout_height="@dimen/instructions_padding"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/double_tap_instructions"/>
+
+        <View android:layout_width="@dimen/zero" android:layout_height="@dimen/instructions_padding"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tap_instructions"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/brightnessContainer"
+        android:layout_width="@dimen/brightness_container_size"
+        android:layout_height="@dimen/brightness_container_size"
+        android:layout_centerInParent="true"
+        android:background="@drawable/brightness_container"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/brightnessDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

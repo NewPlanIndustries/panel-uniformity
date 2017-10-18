@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Panel Uniformity Tester</string>
+    <string name="request_system_permission_title">Panel Uniformity Tester Needs Some Permissions</string>
+    <string name="request_system_permission">Panel Uniformity Tester Needs needs permission to modify your system settings to work properly.</string>
+    <string name="grant_permission_go_back">Please grant permission to Panel Uniformity Tester then press back.</string>
+    <string name="slide_instructions">Slide up and down to adjust the brightness</string>
+    <string name="double_tap_instructions">Double tap to open the color picker</string>
+    <string name="tap_instructions">Tap to hide these instructions</string>
+</resources>
