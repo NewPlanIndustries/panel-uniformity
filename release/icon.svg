@@ -1,0 +1,30 @@
+<svg viewBox="0 0 1024 1024" height="1024" width="1024" xmlns="http://www.w3.org/2000/svg">
+	
+	<defs>
+		<mask id="circleMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+			<circle cx="512" cy="512" r="512" fill="#FFF"/>
+		</mask>
+	</defs>
+
+	<g mask="url(#circleMask)">
+		<rect x="0" y="0" width="256" height="256" fill="#F00"/>
+		<rect x="256" y="0" width="256" height="256" fill="#0E0"/>
+		<rect x="512" y="0" width="256" height="256" fill="#00F"/>
+		<rect x="768" y="0" width="256" height="256" fill="#0E0"/>
+
+		<rect x="0" y="256" width="256" height="256" fill="#0E0"/>
+		<rect x="256" y="256" width="256" height="256" fill="#F00"/>
+		<rect x="512" y="256" width="256" height="256" fill="#0E0"/>
+		<rect x="768" y="256" width="256" height="256" fill="#00F"/>
+
+		<rect x="0" y="512" width="256" height="256" fill="#00F"/>
+		<rect x="256" y="512" width="256" height="256" fill="#0E0"/>
+		<rect x="512" y="512" width="256" height="256" fill="#000"/>
+		<rect x="768" y="512" width="256" height="256" fill="#0E0"/>
+
+		<rect x="0" y="768" width="256" height="256" fill="#0E0"/>
+		<rect x="256" y="768" width="256" height="256" fill="#00F"/>
+		<rect x="512" y="768" width="256" height="256" fill="#0E0"/>
+		<rect x="768" y="768" width="256" height="256" fill="#F00"/>
+	</g>
+</svg>
