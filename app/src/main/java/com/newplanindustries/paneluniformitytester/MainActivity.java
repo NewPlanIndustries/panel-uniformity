@@ -3,7 +3,6 @@ package com.newplanindustries.paneluniformitytester;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Build;
@@ -20,12 +19,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
 import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import hugo.weaving.DebugLog;
+import butterknife.OnLongClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,10 +46,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.brightnessDisplay)
     TextView brightnessDisplay;
 
-    ColorPicker colorPicker;
+    MyColorPicker colorPicker;
 
     @Override
-    @DebugLog
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -80,13 +77,12 @@ public class MainActivity extends AppCompatActivity {
         brightnessDisplay.setText(String.valueOf(getBrightness()));
 
         //Create the color picker
-        colorPicker = new ColorPicker(activity, 255, 255, 255);
+        colorPicker = new MyColorPicker(activity, 255, 255, 255, 255);
 
         //Set the callback for the color picker
         colorPicker.setCallback(colorPickerCallback);
     }
 
-    @DebugLog
     private int getBrightness() {
         try {
             return Settings.System.getInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS);
@@ -97,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         return 0;
     }
 
-    @DebugLog
     private void setBrightness(int brightness) {
         //Check to see if we are even allowed
         if (!checkPermissions()) {
@@ -124,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
         private long lastTapTime = 0;
 
         @Override
-        @DebugLog
         public boolean onTouch(View view, MotionEvent motionEvent) {
             if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                 //Get the current brightness of the screen
@@ -182,7 +176,6 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    @DebugLog
     private boolean checkPermissions() {
         //Check if the API we are running on even needs to be checked
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
@@ -228,7 +221,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    @DebugLog
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
